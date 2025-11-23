@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from app.core.database import init_db
-
+from app.routes.router import router as api_router
 
 app = FastAPI(
     title="To-Do Application",
@@ -12,7 +12,7 @@ app = FastAPI(
 async def on_startup():
     await init_db()
 
-@app.get("/")
-async def read_root():
-    return {"message": "Welcome to the To-Do Application API"}
+app.include_router(api_router)
+
+
 
