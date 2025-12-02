@@ -8,11 +8,10 @@ app = FastAPI(
     version="1.0.0",
 )
 
+
 @app.on_event("startup")
 async def on_startup():
     await init_db()
 
+
 app.include_router(api_router)
-
-
-

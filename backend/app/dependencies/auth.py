@@ -8,7 +8,7 @@ from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 from jwt.exceptions import InvalidTokenError
 from pwdlib import PasswordHash
-from app.schemas.auth import  TokenData,User
+from app.schemas.auth import TokenData, User
 
 password_hash = PasswordHash.recommended()
 
